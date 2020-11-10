@@ -72,9 +72,9 @@ return [
      */
     'official_account' => [
         'default' => [
-            'app_id'  => env('WECHAT_OFFICIAL_ACCOUNT_APPID', 'your-app-id'),         // AppID
-            'secret'  => env('WECHAT_OFFICIAL_ACCOUNT_SECRET', 'your-app-secret'),    // AppSecret
-            'token'   => env('WECHAT_OFFICIAL_ACCOUNT_TOKEN', 'your-token'),           // Token
+            'app_id'  => env('WECHAT_OFFICIAL_ACCOUNT_APPID', 'wxdc2aa58ced520323'),         // AppID
+            'secret'  => env('WECHAT_OFFICIAL_ACCOUNT_SECRET', '819c263fbf15b01c20dc3e848446dae0'),    // AppSecret
+            'token'   => env('WECHAT_OFFICIAL_ACCOUNT_TOKEN', 'xywl'),           // Token
             'aes_key' => env('WECHAT_OFFICIAL_ACCOUNT_AES_KEY', ''),                 // EncodingAESKey
 
             /*
@@ -84,11 +84,12 @@ return [
              * callback：OAuth授权完成后的回调页地址(如果使用中间件，则随便填写。。。)
              * enforce_https：是否强制使用 HTTPS 跳转
              */
-            // 'oauth'   => [
-            //     'scopes'        => array_map('trim', explode(',', env('WECHAT_OFFICIAL_ACCOUNT_OAUTH_SCOPES', 'snsapi_userinfo'))),
-            //     'callback'      => env('WECHAT_OFFICIAL_ACCOUNT_OAUTH_CALLBACK', '/examples/oauth_callback.php'),
-            //     'enforce_https' => true,
-            // ],
+            'oauth'   => [
+                'scopes'        => array_map('trim', explode(',', env('WECHAT_OFFICIAL_ACCOUNT_OAUTH_SCOPES', 'snsapi_userinfo'))),
+                // 'callback'      => env('WECHAT_OFFICIAL_ACCOUNT_OAUTH_CALLBACK', '/examples/oauth_callback.php'),
+                'callback'      => env('WECHAT_OFFICIAL_ACCOUNT_OAUTH_CALLBACK', '/examples/oauth_callback.php'),
+                'enforce_https' => false,
+            ],
         ],
     ],
 
